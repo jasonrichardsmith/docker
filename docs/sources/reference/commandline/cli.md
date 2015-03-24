@@ -358,6 +358,14 @@ To set the DNS server for all Docker containers, use
 To set the DNS search domain for all Docker containers, use
 `docker -d --dns-search example.com`.
 
+The dns command actually manipulates virtual files mounted on the docker
+instance in conjunction with hosts and hostname file.  Given no options
+Docker will copy the resolve.conf from the host to the container, and watch
+the host's resolv.conf for changes which will apply to the container. 
+
+You can read more on dns configuration [here](http://docs.docker.com/articles/networking/#configuring-dns).
+
+
 ### Insecure registries
 
 Docker considers a private registry either secure or insecure.
